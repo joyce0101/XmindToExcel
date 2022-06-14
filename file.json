@@ -1,0 +1,182 @@
+{
+  "title": "主题频道分发",
+  "note": "需求id：",
+  "topics": [
+    {
+      "title": "用户性别",
+      "topics": [
+        {
+          "title": "男",
+          "topics": [
+            {
+              "title": "频道池：仅男、男女皆可"
+            }
+          ]
+        },
+        {
+          "title": "女",
+          "topics": [
+            {
+              "title": "频道池：仅女、男女皆可"
+            }
+          ]
+        },
+        {
+          "title": "未知",
+          "topics": [
+            {
+              "title": "频道池：all"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "性别匹配：n",
+      "topics": [
+        {
+          "title": "n=5",
+          "topics": [
+            {
+              "title": "五个坑位展示性别匹配频道",
+              "makers": [
+                "priority-1",
+                "task-done"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "n<5",
+          "topics": [
+            {
+              "title": "其他性别池类目可以取出5-n个频道，频道不重复",
+              "makers": [
+                "task-done"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "n>5",
+          "topics": [
+            {
+              "title": "类目匹配规则",
+              "topics": [
+                {
+                  "title": "三级类目取出5个不重复频道",
+                  "topics": [
+                    {
+                      "title": "三级类目匹配频道数等于5",
+                      "makers": [
+                        "task-done"
+                      ],
+                      "topics": [
+                        {
+                          "title": "5个坑位展示所匹配频道"
+                        }
+                      ]
+                    },
+                    {
+                      "title": "三级类目匹配频道数大于5",
+                      "makers": [
+                        "priority-1",
+                        "task-done"
+                      ],
+                      "topics": [
+                        {
+                          "title": "取出权重top5的频道展示"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "二级类目取出5个不重复频道",
+                  "topics": [
+                    {
+                      "title": "二级类目匹配频道数等于5",
+                      "makers": [
+                        "task-done"
+                      ],
+                      "topics": [
+                        {
+                          "title": "5个坑位展示所匹配频道"
+                        }
+                      ]
+                    },
+                    {
+                      "title": "二级类目匹配频道数大于5",
+                      "makers": [
+                        "priority-1",
+                        "task-done"
+                      ],
+                      "topics": [
+                        {
+                          "title": "前x个坑位展示三级类目命中频道，y个坑位取二级类目权重top y的频道，x+y=5"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "一级类目取出5个不重复频道",
+                  "topics": [
+                    {
+                      "title": "一级类目匹配频道等于5",
+                      "makers": [
+                        "task-done"
+                      ],
+                      "topics": [
+                        {
+                          "title": "5个坑位展示所匹配频道"
+                        }
+                      ]
+                    },
+                    {
+                      "title": "一级类目匹配频道小于5",
+                      "makers": [
+                        "symbol-exclam",
+                        "task-done"
+                      ],
+                      "topics": [
+                        {
+                          "title": "前x个坑位展示一级类目匹配频道，从性别池随机取5-n"
+                        }
+                      ]
+                    },
+                    {
+                      "title": "一级类目频道大于5",
+                      "makers": [
+                        "priority-1",
+                        "task-done"
+                      ],
+                      "topics": [
+                        {
+                          "title": "前x个坑位展示二级类目匹配来的频道，y个坑位取一级类目权重top y的频道，x+y=5"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "一个频道所在多个类目ABC被命中",
+                  "topics": [
+                    {
+                      "title": "多个类目有多个频道",
+                      "topics": [
+                        {
+                          "title": "该频道被取出后，则其他类目取其他频道"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

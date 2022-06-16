@@ -16,7 +16,11 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(leve
 logger = logging.getLogger(__name__)
 
 
-def get_absolute_path(path):
+def get_absolute_path(path) -> str:
+    """
+    :param path: xmind 文件路径
+    :return: 文件绝对路径
+    """
     fp, fn = os.path.split(path)
     if not fp:
         fp = os.getcwd()
@@ -24,10 +28,18 @@ def get_absolute_path(path):
     return os.path.join(fp, fn)
 
 
-def xmind_to_excel(path):
-    file_path = get_absolute_path("../xmind/中心主题.xmind")
+def xmind_to_excel(path) -> list:
+    """
+    :param path:
+    :return: 解析后的用例列表
+    """
+    file_path = get_absolute_path(path)
     root = xmind_to_dict(file_path)[0]['topic']
     story_id = root["note"]
+
+
+def write_excel(case_list):
+    pass
 
 
 if __name__ == '__main__':

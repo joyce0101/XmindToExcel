@@ -7,10 +7,6 @@
 @Date    ：2022/6/21 2:23 PM 
 """
 
-config = {
-    'title': '#'
-}
-
 
 class TestCase(object):
     def __int__(self, title, directory, steps, expectation, priority, precondition):
@@ -30,3 +26,4 @@ class TestCase(object):
             'priority': self.priority,
             'precondition': self.precondition  # TODO 前置条件可以写在用例标题的笔记里面，暂未实现
         }
+        return data
